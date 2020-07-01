@@ -1,0 +1,128 @@
+#include "All.h"
+Interface::Interface()
+{
+	value=0;
+}
+void Interface::DrawInterface()
+{
+	setfillcolor(LIGHTGRAY);
+	setlinecolor(WHITE);
+	fillrectangle(1080,0,1280,300);
+	line(1180,0,1180,200);
+	line(1080,100,1280,100);
+	line(1080,200,1280,200);
+	settextcolor(BLACK);
+	settextstyle(30, 0, _T("黑体"));
+	char s[] = "欢迎";
+	outtextxy(1100,35,s);
+	char t[] = "移动";
+	outtextxy(1200,35,t);
+	char p[] = "跳舞";
+	outtextxy(1100,135,p);
+	char q[] = "眼动";
+	outtextxy(1200,135,q);
+	char r[] = "退出系统";
+	outtextxy(1120,235,r);
+}
+void Interface::Choose()
+{
+	for(;;)
+	{
+		m=GetMouseMsg();
+		if(m.x>1080&&m.x<1180&&m.y>0&&m.y<100)
+		{
+			setfillcolor(LIGHTGRAY);
+			floodfill(1081,1,DARKGRAY,1);
+			floodfill(1181,1,DARKGRAY,1);
+			floodfill(1081,101,DARKGRAY,1);
+			floodfill(1181,101,DARKGRAY,1);
+			floodfill(1081,201,DARKGRAY,1);
+			setfillcolor(DARKGRAY);
+			floodfill(1081,1,LIGHTGRAY,1);
+			if(m.mkLButton)
+			{
+				value=1;
+				Sleep(500);
+				setfillcolor(LIGHTGRAY);
+				floodfill(1081,1,DARKGRAY,1);
+				break;
+			}
+		}
+		if(m.x>1180&&m.x<1280&&m.y>0&&m.y<100)
+		{
+			setfillcolor(LIGHTGRAY);
+			floodfill(1081,1,DARKGRAY,1);
+			floodfill(1181,1,DARKGRAY,1);
+			floodfill(1081,101,DARKGRAY,1);
+			floodfill(1181,101,DARKGRAY,1);
+			floodfill(1081,201,DARKGRAY,1);
+			setfillcolor(DARKGRAY);
+			floodfill(1181,1,LIGHTGRAY,1);
+			if(m.mkLButton)
+			{
+				value=2;
+				Sleep(500);
+				setfillcolor(LIGHTGRAY);
+				floodfill(1181,1,DARKGRAY,1);
+				break;
+			}
+		}
+		if(m.x>1080&&m.x<1180&&m.y>100&&m.y<200)
+		{
+			setfillcolor(LIGHTGRAY);
+			floodfill(1081,1,DARKGRAY,1);
+			floodfill(1181,1,DARKGRAY,1);
+			floodfill(1081,101,DARKGRAY,1);
+			floodfill(1181,101,DARKGRAY,1);
+			floodfill(1081,201,DARKGRAY,1);
+			setfillcolor(DARKGRAY);
+			floodfill(1081,101,LIGHTGRAY,1);
+			if(m.mkLButton)
+			{
+				value=3;
+				Sleep(500);
+				setfillcolor(LIGHTGRAY);
+				floodfill(1081,101,DARKGRAY,1);
+				break;
+			}
+		}
+		if(m.x>1180&&m.x<1280&&m.y>100&&m.y<200)
+		{
+			setfillcolor(LIGHTGRAY);
+			floodfill(1081,1,DARKGRAY,1);
+			floodfill(1181,1,DARKGRAY,1);
+			floodfill(1081,101,DARKGRAY,1);
+			floodfill(1181,101,DARKGRAY,1);
+			floodfill(1081,201,DARKGRAY,1);
+			setfillcolor(DARKGRAY);
+			floodfill(1181,101,LIGHTGRAY,1);
+			if(m.mkLButton)
+			{
+				value=4;
+				Sleep(500);
+				setfillcolor(LIGHTGRAY);
+				floodfill(1181,101,DARKGRAY,1);
+				break;
+			}
+		}
+		if(m.x>1080&&m.x<1280&&m.y>200&&m.y<300)
+		{
+			setfillcolor(LIGHTGRAY);
+			floodfill(1081,1,DARKGRAY,1);
+			floodfill(1181,1,DARKGRAY,1);
+			floodfill(1081,101,DARKGRAY,1);
+			floodfill(1181,101,DARKGRAY,1);
+			floodfill(1081,201,DARKGRAY,1);
+			setfillcolor(DARKGRAY);
+			floodfill(1081,201,LIGHTGRAY,1);
+			if(m.mkLButton)
+			{
+				value=5;
+				Sleep(500);
+				setfillcolor(LIGHTGRAY);
+				floodfill(1081,201,DARKGRAY,1);
+				break;
+			}
+		}
+	}
+}
